@@ -1,13 +1,15 @@
 package Controller;
-import java.io.*;
 import java.util.*;
 import Model.Morgue;
+import View.Table;
 
 public class MorgueController {
     private Vector v;
+    private Table td;
  
     public MorgueController(){
         v = new Vector();
+        td = new Table();
     }
 
     public  void recedados(){
@@ -19,31 +21,20 @@ public class MorgueController {
       v.trimToSize();
     }
 
-    public void GravarFich(String nameFil) {
-        try {
-            FileOutputStream ff = new FileOutputStream(nameFil);
-            ObjectOutputStream ii = new ObjectOutputStream(ff);
-            ii.writeObject(v);
-            ii.close();
-        } catch (IOException l) {
-            System.out.print(l.getMessage());
-        }
-    }
 
-    
     public void lerDoFic(String nameFil) {
         Lerdados lf =  new Lerdados();
-        // lf.LerDados(v, nameFil);
+        lf.LerdadosMorgue(v, nameFil);
     }
 
-    public String  toString() {
-        String  x = " ";
+    public void   listaM() {
         Morgue aux;
+        td.setHeaders("Codigo", "Celuar","Avenida");
         for (int i = 0; i < v.size(); i++) {
             aux = (Morgue)v.elementAt(i);
-            x = x + "\n";
+            td.addRow(""+aux.getCodMorgue(),""+aux.getConta1(),""+aux.getAvenida());
         }
-        return x;
+        td.showTable();
     }
     
 }

@@ -21,6 +21,22 @@ public class Corpo  {
         this.codCorpo = codCorpo;
     }
 
+    public int getCorpo() {
+        return codCorpo;
+    }
+
+    public char getGenero() {
+        return genero;
+    }
+
+    public String getFaixaEtaria() {
+        return faixaEtaria;
+    }
+
+    public String getCausaMorte() {
+        return causaMorte;
+    }
+    
     public void setGenero(char genero) {
         if(genero == 'f' || genero =='F'|| genero =='M'||genero == 'm' )
         this.genero = genero;

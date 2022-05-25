@@ -16,10 +16,4 @@ public class Camera {
     public int getNumero() {
         return numero;
     }
-
-    public String toString(){
-        return "Codico do corpo : "+codCorpo+" | Numero da camera : "+numero+"";
-    }
-
-
 }

@@ -17,4 +17,8 @@ private String marcasPele;
     public void setMarcasPele(String marcasPele) {
         this.marcasPele = marcasPele;
     }
+
+    public String getMarcasPele() {
+        return marcasPele;
+    }
 }

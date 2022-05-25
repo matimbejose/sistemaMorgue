@@ -9,17 +9,26 @@ public CorpoConh(int codCorpo,String nome, char genero,String faixaEtaria,String
         this.nomePante = nomePante;
         this.nome = nome;
     }
-
     public CorpoConh() {
        this(0, " ", ' ', " ", " ", " ");
     }
+    
+    public String getNome() {
+        return nome;
+    }
 
+    public String getNomeParente() {
+        return nomePante;
+    }
 
-    public void  setNomeParente(String nomePante) {
+    public void  setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setNomeParente(String nomePante) {
         this.nomePante = nomePante;
     }
 
-    public String toString(){
-        return "Codico do corpo : "+codCorpo+" | genero:"+genero+"|faixa etaria : "+faixaEtaria+" | causa da morte "+causaMorte+"| Nome do parente : "+nomePante+" ";
-    }
 }
+
+

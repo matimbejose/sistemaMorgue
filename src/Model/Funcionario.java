@@ -11,4 +11,16 @@ public  Funcionario(int codFunc, String nome,String funcao) {
     this.funcao = funcao;
 }
 
+public int getCodF() {
+    return codFunc;
+}
+
+public String getNome() {
+    return nome;
+}
+
+public String getFuncao() {
+    return funcao;
+}
+
 }

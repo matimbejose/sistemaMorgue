@@ -1,14 +1,15 @@
 package Controller;
-import java.io.*;
 import java.util.Vector;
 import Model.Funcionario;
-import Model.Morgue;
+import View.Table;
 
 public class FucionarioController {
 private Vector  v;
+private Table td;
 
 public  FucionarioController() {
     v = new Vector();
+    td = new Table();
 }
 
     public void  recedados() {
@@ -20,29 +21,19 @@ public  FucionarioController() {
         v.trimToSize();
     }
 
-    public void graFicn(String nameF) {
-        try {
-            FileOutputStream ff = new FileOutputStream(nameF);
-            ObjectOutputStream ii = new ObjectOutputStream(ff);
-            ii.writeObject(v);
-            ii.close();
-        } catch (IOException l) {
-            System.out.print(l.getMessage());
-        }
-    }
 
     
     public void lerDoFic(String nameFil) {
         Lerdados lf =  new Lerdados();
-        // lf.LerDados(v, nameFil);
+        lf.LerdadosFunc(v, nameFil);
     }
 
-    public String  toString() {
-        String  x = " ";
+    public void   listaF() {
+        td.setHeaders("codigo ","nome","funcao");
         for (int i = 0; i < v.size(); i++) {
             Funcionario aux = (Funcionario)v.elementAt(i);
-            x = x + "\n";
+            td.addRow(""+aux.getCodF(),aux.getNome(),aux.getFuncao());
         }
-        return x;
+        td.showTable();
     }
 }

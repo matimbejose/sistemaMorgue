@@ -1,12 +1,15 @@
 package Controller;
 import java.util.*;
 import Model.Camera;
+import View.Table;
 
 public class CameraController {
     public Vector v;
+    private Table td;
 
     public CameraController() { 
         v = new Vector();
+        td = new Table();
     }
 
     public void  recedados(){
@@ -27,15 +30,20 @@ public class CameraController {
         Lerdados l = new Lerdados();
         l.LerDadosCamera(v, nameFil);
     }
+
+    public void removeCamera(int numero) {
+        RemoverDados rm = new RemoverDados();
+        rm.removeCamera(v, numero);
+    }
     
-    public String  toString() {
-        String  x = " ";
+    public void   listaCamera() {
         Camera aux;
+        td.setHeaders("Codigo do corpo","Numero da camera");
         for (int i = 0; i < v.size(); i++) {
             aux = (Camera)v.elementAt(i);
-            x = aux.toString() + x + "\n";
+            td.addRow(""+aux.getCodCorpo(),""+aux.getNumero());
         }
-        return x;
+        td.showTable();
     }
 
 }

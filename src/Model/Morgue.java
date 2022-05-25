@@ -10,4 +10,16 @@ public class Morgue  {
         this.conta1 = conta1;
         this.avenida = avenida;
     }
+
+    public int getCodMorgue() {
+        return codMorgue;
+    }
+
+    public int  getConta1() {
+        return conta1;
+    }
+
+    public String getAvenida() {
+        return avenida;
+    }
 }
