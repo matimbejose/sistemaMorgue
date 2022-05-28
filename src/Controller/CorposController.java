@@ -22,12 +22,16 @@ public class CorposController
     public void recebeConhecido() {
         int codCorpo = geraCod.geraCod();
         char genero = Validacoes.validarChar("Imforme  o genetro : ",1,1);
-        String nome = Validacoes.ValidarString("Imforme o nome completo do falecido: ", 1000, 100);
+        String nome = Validacoes.ValidarString("Imforme o nome completo do falecido: ", 1000, 4);
         String  faixaEtaria = Validacoes.ValidarString("Imforme a faixa etaria: ", 100, 3);
         String  causaMorte = Validacoes.ValidarString("Imforme a causa da morte: ", 100, 3);
         String nomePante = Validacoes.ValidarString("Imforeme o nome do parante : ", 20, 3);
         CorpoConh cc = new CorpoConh(codCorpo, nome, genero, faixaEtaria, causaMorte, nomePante);
-        v.addElement(cc);
+        if(v.add(cc)){
+            System.out.println("adicionado com sucesso");
+        } else {
+            System.out.println("erro no cadrasto");
+        }
         v.trimToSize();
     }
 
@@ -38,7 +42,11 @@ public class CorposController
          String   causaMorte = Validacoes.ValidarString("Imforme a causa da morte: ", 100, 3);
         String marcasPele = Validacoes.ValidarString(" Imforme as marcas na pele : ", 40, 3);
         CorpoDes cd  = new CorpoDes(codCorpo, genero, faixaEtaria, causaMorte, marcasPele);
-        v.addElement(cd);   
+        if(v.add(cd)){
+            System.out.println("adicionado com sucesso");
+        } else {
+            System.out.println("erro no cadrasto");
+        }
         v.trimToSize();
     }
     
@@ -46,25 +54,40 @@ public class CorposController
         l.LerdadosCorpo(v, nameFil);
     }
 
+    public void gravarTxt(String nameFil) {
+        gd.gravaCorpo(nameFil, v);
+    }
     
-    public void GravarFichC(String nameFil) {
-     }
-
+  
     public void   listaCConhecido() {
-        td.setHeaders("Codigo", "Nome", "genero", "faixa entaria", "Nome do Parante");
+        td.setHeaders("Codigo","Genero", "Faixa Etaria","Causa da Morte","Nome ", "Nome do parante");
         CorpoConh aux;
-        for (int i = 0; i < v.size(); i++) {
-            aux = (CorpoConh)v.elementAt(i);
-            td.addRow(""+aux.getCorpo(),""+aux.getGenero(),""+aux.getFaixaEtaria(),""+aux.getNomeParente());
+        Corpo c;
 
+        for (int i = 0; i < v.size(); i++) {
+            c = (Corpo)v.elementAt(i);
+            if(c instanceof CorpoConh) {
+                aux = (CorpoConh)c;
+                td.addRow(""+aux.getCorpo(),""+aux.getGenero(),""+aux.getFaixaEtaria(),""+aux.getCausaMorte(),aux.getNome(),aux.getNomeParente());
+            }
         }
+        td.showTable();
     }
     
     public void   listaCDesconhecido() {
+        td.setHeaders("Codigo","Genero", "Faixa Etaria","Causa da Morte","Marcas na pele");
         CorpoDes aux;
+        Corpo c;
+
         for (int i = 0; i < v.size(); i++) {
-            aux = (CorpoDes)v.elementAt(i);
+            c = (Corpo)v.elementAt(i);
+            if(c instanceof CorpoDes) {
+                aux = (CorpoDes)c;
+                td.addRow(""+aux.getCorpo(),""+aux.getGenero(),""+aux.getFaixaEtaria(),""+aux.getCausaMorte(),aux.getMarcasPele());
+            }
         }
+
+        td.showTable();
     }
 
 

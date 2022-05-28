@@ -5,7 +5,7 @@ public class Menu {
  
     public static void mostrarMenu() {
       CorposController g = new CorposController();
-
+      g.lerDoFicC("corpo.txt");
       CorposTransferidoController gt = new CorposTransferidoController();
       gt.lerDoFicC("corpoT.txt");
 
@@ -35,11 +35,13 @@ public class Menu {
 
                     switch(esc2) {
                         case 1:
-                        //listar corpos conhecidos
+                        g.listaCConhecido();
+                        esc = 5;
                         break;
 
                         case 2:
-                        //listar corppos  desconhecidos
+                        g.listaCDesconhecido();
+                        esc = 5;
                         break;
                     
                         case 3:
@@ -79,13 +81,29 @@ public class Menu {
                 short esc3 = Validacoes.validarShort("Imforme uma opcao do menu : ", 7, 1);
                 switch(esc3) {
                     case 1:
-                    // g.recebeDadoCorpo();
-                    // g.GravarFich("corpo.txt");
+                   MostrarOp.mostarTipoCopr();
+                   short esc4 = Validacoes.validarShort("Imforme uma opcao do menu : ", 3, 1);
+
+                   switch(esc4) {
+                       case 1:
+                       g.recebeConhecido();
+                       g.gravarTxt("corpo.txt");  
+                       break;
+
+                       case 2:
+                       g.recebeDesconhecido();
+                       g.gravarTxt("corpo.txt");  
+                       break;
+
+                       case 3:
+                       
+                       break;
+                   }
                     break;
 
                     case 2:
                     gf.recedados();
-                    // g.GravarFich("Fucionario.txt");
+                    gf.gravarTxt("Funcionario.txt");
                     break;
 
                     case 3:
@@ -95,6 +113,7 @@ public class Menu {
 
                     case 4:
                     gm.recedados();
+                    gm.gravarTxt("morgue.txt");
                     break;
 
                     //mostar menu principal
@@ -113,7 +132,7 @@ public class Menu {
                 switch(esc4) {
                     //corpos 
                     case 1:
-                    System.out.println("Menu \n 1-Conhecido \n 2-Desconhecido \n 3-Transferido");
+                   MostrarOp.mostarTipoCopr();
                     short esc5 = Validacoes.validarShort("imforme o tipo de corpo : ", 7, 1);
                     switch(esc5) {
                         //conhecidos 
@@ -184,7 +203,7 @@ public class Menu {
                     case 2:
                     break;
 
-                    //camera\
+                    //camera
                     case 3:
                     int numero = Validacoes.ValidarInt("Imforme o numero da camara que deseja remover: ", 100, 1);
                     gc.removeCamera(numero);

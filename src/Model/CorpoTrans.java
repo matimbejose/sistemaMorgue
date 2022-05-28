@@ -20,7 +20,7 @@ public CorpoTrans(int codCorpo,char  tipoCorpo, int codMorgue) {
         return tipoCorpo;
     }
 
-    public int getcodMorgue() {
+public int getcodMorgue() {
         return codMorgue;
     }
 }

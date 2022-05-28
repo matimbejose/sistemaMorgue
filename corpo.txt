@@ -1,6 +1,3 @@
 1234;m;idade entre os 20-30;suiciido;c;matimbe jose;matimbe justino
-2233;m;30 anoos de idade;suiciido;d;pele vermelha com machas escuras
-3233;f;velho entre os 29;suiciido;d;pele vermelha com machas escuras
-4233;f;velho entre os 33;suiciido;d;pele vermelha com machas escuras
-5233;m;velho entre os 49;suiciido;d;pele vermelha com machas escuras
-6233;f;velho entre os 4o4;suiciido;d;pele vermelha com machas escuras
+5618;m;velho com barba braca ;causa da morte nao sabemos;d;pele clara com machas escuras
+6818;f;jovem entre os 20-30 anos ;tomou varios madicamentos;d;nao temos marcas
