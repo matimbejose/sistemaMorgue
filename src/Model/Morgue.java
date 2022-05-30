@@ -22,4 +22,8 @@ public class Morgue  {
     public String getAvenida() {
         return avenida;
     }
+
+    public void setConta1(int conta1) {
+        this.conta1 = conta1;
+    }
 }

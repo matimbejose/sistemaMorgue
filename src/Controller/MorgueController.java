@@ -7,11 +7,17 @@ public class MorgueController {
     private Vector v;
     private Table td;
     private Gravardados gd;
- 
+    private Lerdados lf;
+    private RemoverDados rd;
+    private EditarDaddos ed;
+
     public MorgueController(){
         v = new Vector();
         td = new Table();
         gd = new Gravardados();
+        lf = new Lerdados();
+        rd = new RemoverDados();
+        ed = new EditarDaddos();
     }
 
     public  void recedados(){
@@ -29,12 +35,19 @@ public class MorgueController {
 
 
     public void lerDoFic(String nameFil) {
-        Lerdados lf =  new Lerdados();
         lf.LerdadosMorgue(v, nameFil);
     }
 
     public void gravarTxt(String nameFil) {
         gd.gravaMorgue(nameFil, v);
+    }
+
+    public void removeM(int cod) {
+        rd.removeM(v, cod);
+    }
+
+    public void edita(int code) {
+        ed.editaM(v, code);
     }
     
 

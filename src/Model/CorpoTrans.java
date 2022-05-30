@@ -20,8 +20,16 @@ public CorpoTrans(int codCorpo,char  tipoCorpo, int codMorgue) {
         return tipoCorpo;
     }
 
-public int getcodMorgue() {
+    public int getcodMorgue() {
         return codMorgue;
+    }
+
+    public void setTipoCorpo(char tipoCorpo) {
+        this.tipoCorpo = tipoCorpo;
+    }
+
+    public void setCodMorgue(int codMorgue) {
+        this.codMorgue = codMorgue;
     }
 }
 

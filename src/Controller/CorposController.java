@@ -10,13 +10,16 @@ public class CorposController
     private Lerdados l;
     private Gravardados gd;
     private Table td;
-    
+    private RemoverDados rd;
+    private EditarDaddos ed;
 
     public CorposController() {
         v = new Vector(100);
         l = new Lerdados();
         gd = new Gravardados();
         td = new Table();
+        rd = new RemoverDados();
+        ed = new EditarDaddos();
     }
 
     public void recebeConhecido() {
@@ -57,6 +60,22 @@ public class CorposController
     public void gravarTxt(String nameFil) {
         gd.gravaCorpo(nameFil, v);
     }
+
+    public void removeCorC(int cd) {
+        rd.removeCorpo(v, cd);
+    }    
+    public void removeCorD(int cd) {
+        rd.removeCorpoD(v, cd);
+    }
+
+    public void editaC(int cod) {
+        ed.editaC(v, cod);
+    }
+
+    public void editaD(int cd){
+        ed.editaD(v, cd);
+    }
+    
     
   
     public void   listaCConhecido() {

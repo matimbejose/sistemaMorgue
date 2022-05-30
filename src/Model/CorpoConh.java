@@ -24,6 +24,7 @@ public CorpoConh(int codCorpo,String nome, char genero,String faixaEtaria,String
     public void  setNome(String nome) {
         this.nome = nome;
     }
+    
 
     public void setNomeParente(String nomePante) {
         this.nomePante = nomePante;

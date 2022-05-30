@@ -4,6 +4,7 @@ import Model.Camera;
 import Model.Corpo;
 import Model.CorpoConh;
 import Model.CorpoDes;
+import Model.CorpoTrans;
 import Model.Funcionario;
 import Model.Morgue;
 
@@ -96,13 +97,13 @@ public class Gravardados {
     }
 
     public  void  gravaCorpoT(String nameFil, Vector list) {
-        Camera ob;
+        CorpoTrans ob;
         try {
             FileWriter fw = new FileWriter(nameFil);
             BufferedWriter br = new BufferedWriter(fw);
             for(int i = 0; i < list.size(); i++) {
-                ob = (Camera)list.elementAt(i);
-                br.write(ob.getCodCorpo()+";"+ob.getNumero());
+                ob = (CorpoTrans)list.elementAt(i);
+                br.write(ob.getCodCorpo()+";"+ob.getTipoCorpo()+";"+ob.getcodMorgue());
                 br.newLine();
             }
             br.close();

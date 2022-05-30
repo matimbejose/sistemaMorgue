@@ -7,11 +7,17 @@ public class FucionarioController {
 private Vector  v;
 private Table td;
 private Gravardados gd;
+private Lerdados lf;
+private RemoverDados rd;
+private EditarDaddos ed;
 
 public  FucionarioController() {
     v = new Vector();
     td = new Table();
     gd = new Gravardados();
+    lf = new Lerdados();
+    rd = new RemoverDados();
+    ed = new EditarDaddos();
 }
 
     public void  recedados() {
@@ -30,16 +36,21 @@ public  FucionarioController() {
 
     
     public void lerDoFic(String nameFil) {
-        Lerdados lf =  new Lerdados();
         lf.LerdadosFunc(v, nameFil);
     }
 
     public void gravarTxt(String nameFil) {
-    gd.gravaFunc(nameFil, v);
+       gd.gravaFunc(nameFil, v);
     }
 
+    public void removFunc(int cod) {
+        rd.removeF(v, cod);
+    }
 
-
+    public void editaF(int cod) {
+        ed.editaF(v, cod);
+    }
+    
     public void   listaF() {
         td.setHeaders("codigo ","nome","funcao");
         for (int i = 0; i < v.size(); i++) {
