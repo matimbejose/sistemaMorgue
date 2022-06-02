@@ -1,18 +1,15 @@
-## Getting Started
+## Sistema de gestão da Morgue do  Hospital Central de Maputo 
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Seja muito bem vindo ao repositório oficial do SGM-HCM, aplicação criada no âmbito da aplicação dos conhecimentos adquiridos na cadeira de programação orientada à objectos 1.
+## Estudantes 
 
-## Folder Structure
+- Matimbe, José Justino (moderador)
+- Junior, Luis Munaira  
+- Macaneta, Lino Filipe
+- Xavier, Omar Davide     
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
+## Dependências
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+## instalação
