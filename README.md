@@ -18,5 +18,5 @@ Seja muito bem vindo ao repositório oficial do SGM-HCM, aplicação criada no �
 - Execute o programa ` java Excutaval.class `
 
 ## Links 
-- `UML :`
-- `SLIDE : `
+- `UML :` 
+- `SLIDE : ` https://docs.google.com/presentation/d/1X1GPZETEK9zRAOEgRfurHZwnakvmk-oo/edit?usp=drivesdk&ouid=110599150145463806351&rtpof=true&sd=true
