@@ -12,3 +12,7 @@ Seja muito bem vindo ao repositório oficial do SGM-HCM, aplicação criada no �
 - `JDK 8`
 
 ## instalação
+- Faça o clone do repositório `git clone https://github.com/matimbejose/sistemaMorgue/ `
+- Navegue até `src/view`
+- Compile o executável `javac Excutavel.java`
+- Execute o programa ` java Excutaval.class `
