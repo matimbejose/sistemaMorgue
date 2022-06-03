@@ -9,7 +9,6 @@ Seja muito bem vindo ao repositório oficial do SGM-HCM, aplicação criada no �
 - Xavier, Omar Davide     
 
 ## Dependências
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- `JDK 8`
 
 ## instalação
