@@ -16,3 +16,7 @@ Seja muito bem vindo ao repositório oficial do SGM-HCM, aplicação criada no �
 - Navegue até `src/view`
 - Compile o executável `javac Excutavel.java`
 - Execute o programa ` java Excutaval.class `
+
+## Links 
+- `UML :`
+- `SLIDE : `
