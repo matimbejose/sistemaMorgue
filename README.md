@@ -18,7 +18,7 @@ Seja muito bem vindo ao repositório oficial do SGM-HCM, aplicação criada no �
 - Execute o programa ` java Excutaval.class `
 
 ## Versões  
-- Versão  LTS : [2.0](https://drive.google.com/drive/folders/10AYCFD5V6vTPerhkFvj32Nh5tHjkVA-C?usp=sharing)
+- Versão  LTS (Correspondente a primeira e segunda entrega) : [2.0](https://drive.google.com/drive/folders/10AYCFD5V6vTPerhkFvj32Nh5tHjkVA-C?usp=sharing)
 - Versão  corrente :) Versão desse repositório 
 
 
