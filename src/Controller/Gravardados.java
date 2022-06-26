@@ -7,6 +7,9 @@ import Model.CorpoDes;
 import Model.CorpoTrans;
 import Model.Funcionario;
 import Model.Morgue;
+import Model.UserAb;
+import Model.UserD;
+import Model.Usuario;
 
 import java.io.*;
 
@@ -110,6 +113,34 @@ public class Gravardados {
         }  catch (IOException l){
             System.out.print(l.getMessage());
         }
-       
+
     }
+
+
+        public  void  gravaUserAb(String nameFil, Vector list) {
+            Usuario u;
+            UserAb ab;
+            UserD d;
+            try {
+                FileWriter fw = new FileWriter(nameFil);
+                BufferedWriter br = new BufferedWriter(fw);
+                for(int i = 0; i < list.size(); i++) {
+                    u = (Usuario)list.elementAt(i);
+                    if(u instanceof UserAb) {
+                        ab = (UserAb)u;
+                        br.write(ab.getCod()+";"+ab.getNome()+";"+ab.getUsername()+";"+ab.getPassowrd()+";"+"g"+";"+ab.getNrOb());
+                        br.newLine();
+                    } else {
+                        d = (UserD)u;
+                        br.write(d.getCod()+";"+d.getNome()+";"+d.getUsername()+";"+d.getPassowrd()+";"+"d"+";"+d.getano());
+                        br.newLine();
+                    }
+                }
+                br.close();
+            }  catch (IOException l){
+                System.out.print(l.getMessage());
+            }
+     }
+
+
 }

@@ -9,7 +9,6 @@ private Table td;
 private Gravardados gd;
 private Lerdados lf;
 private RemoverDados rd;
-private EditarDaddos ed;
 
 public  FucionarioController() {
     v = new Vector();
@@ -17,18 +16,18 @@ public  FucionarioController() {
     gd = new Gravardados();
     lf = new Lerdados();
     rd = new RemoverDados();
-    ed = new EditarDaddos();
 }
 
     public void  recedados() {
+        System.out.println("\n===========================CADASTRO DE FUNCIONARIO============================");
         int codFunc = geraCod.geraCod();
-        String nome = Validacoes.ValidarString("Imforme o nome do funcionario : ", 100, 3);
-        String funcao = Validacoes.ValidarString("Imforme a funcao do "+nome+" : ", 100, 3);
+        String nome = Validacoes.ValidarString("Nome: ", 100, 3);
+        String funcao = Validacoes.ValidarString("Funcao: ", 100, 3);
         Funcionario fun = new Funcionario(codFunc, nome, funcao);
         if(v.add(fun)){
-            System.out.println("adicionado com sucesso");
+        System.out.println("\n=======================FUNCIONARIO CADASTRADO COM SUCESSO=====================");
         } else {
-            System.out.println("erro no cadrasto");
+            System.out.println("ERRO NO CADASTRO");
         }
         v.trimToSize();
     }
@@ -47,11 +46,9 @@ public  FucionarioController() {
         rd.removeF(v, cod);
     }
 
-    public void editaF(int cod) {
-        ed.editaF(v, cod);
-    }
-    
+  
     public void   listaF() {
+        System.out.println("LISTA DE FUNCIONARIOS\n");
         td.setHeaders("codigo ","nome","funcao");
         for (int i = 0; i < v.size(); i++) {
             Funcionario aux = (Funcionario)v.elementAt(i);

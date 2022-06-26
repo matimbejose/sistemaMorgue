@@ -15,7 +15,7 @@ public CorpoTrans(int codCorpo,char  tipoCorpo, int codMorgue) {
     public int getCodCorpo() {
         return codCorpo;
     }
-
+    
     public char getTipoCorpo() {
         return tipoCorpo;
     }

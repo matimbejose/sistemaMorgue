@@ -1,0 +1,5 @@
+2245;Lino Caneta;caneta;1463;g;1
+3245;Munaira Junior;junior;1243;g;2
+5119;Macamba;naca11;7432;g;4
+4119;Matimbe Jose;matimbe;1234;d;2018
+6134;Omar Davide ;matimbe;1234;g;10

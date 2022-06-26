@@ -1,13 +1,6 @@
 package Controller;
-
 import java.util.Vector;
-import Model.Camera;
-import Model.Corpo;
-import Model.CorpoConh;
-import Model.CorpoDes;
-import Model.CorpoTrans;
-import Model.Funcionario;
-import Model.Morgue;
+import Model.*;
 
 public class RemoverDados {
     
@@ -18,7 +11,7 @@ public class RemoverDados {
            aux =(Camera)list.elementAt(i);
            if(aux.getNumero() == numero) {
                if(list.remove(aux)) {
-                   System.out.print("removido com sucesso !");
+                   System.out.print("CAMERA REMOVIDA COM SUCESSO !");
                }
            } 
 
@@ -36,7 +29,7 @@ public class RemoverDados {
                    cc = (CorpoConh)aux;
                    if(cc.getCorpo() == cod) {
                        if(list.remove(cc)) {
-                          System.out.println("removido com sucesso !");
+                          System.out.println("CORPO REMOVIDO COM SUCESSO !");
                     }
                    }
            }
@@ -53,7 +46,7 @@ public void  removeCorpoD(Vector list, int  cod) {
                cd = (CorpoDes)aux;
                if(cd.getCorpo() == cod) {
                    if(list.remove(cd)) {
-                      System.out.println("removido com sucesso !");
+                      System.out.println("CORPO REMOVIDO COM SUCESSO");
                 }
                }
        }
@@ -66,7 +59,7 @@ public void  removeCorpoT(Vector list, int  cod) {
        ct = (CorpoTrans)list.elementAt(i);                
        if(ct.getCodCorpo() == cod) {
            if(list.remove(ct)) {
-               System.out.println("removido com sucesso !");
+               System.out.println("CORPO REMOVIDO COM SUCESSO !");
            }
        }
     }
@@ -78,7 +71,7 @@ public void  removeCorpoT(Vector list, int  cod) {
        fun = (Funcionario)list.elementAt(i);                
        if(fun.getCodF() == cod) {
            if(list.remove(fun)) {
-               System.out.println("removido com sucesso !");
+               System.out.println("FUNCIONARIO REMOVIDO COM SUCESSO !");
            }
        }
     }
@@ -91,11 +84,28 @@ public void  removeCorpoT(Vector list, int  cod) {
        m = (Morgue)list.elementAt(i);                
        if(m.getCodMorgue() == cod) {
            if(list.remove(m)) {
-               System.out.println("removido com sucesso !");
+               System.out.println("MORGUE REMOVIDADA COM SUCESSO !");
            }
        }
     }
   }
+
+  public void  removeG(Vector list, int  cod) {
+    Usuario  u;
+    UserAb ab;
+ for(int i = 0; i < list.size(); i++) {
+     u = (Usuario)list.elementAt(i);                
+    if(u instanceof UserAb) {
+        ab = (UserAb)u;
+        if(ab.getCod() == cod ) {
+            if(list.remove(ab)){
+                System.out.println("GESTOR  REMOVIDO COM SUCESSO");
+            }
+        }
+    }
+  }
+}
+
 
 
 }

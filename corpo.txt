@@ -1,9 +1,10 @@
-1234;m;idade entre os 20-30;suiciido;c;matimbe jose;matimbe justino
-5618;m;velho com barba braca ;causa da morte nao sabemos;d;nao temos marcas
-6818;f;jovem entre os 20-30 anos ;tomou varios madicamentos;d;nao temos marcas
-5110;g;de 12 a 14 anos;se matou por stress de pitas;c;hugo basto;matemba
-2243;m;45 - 47 anos;nao sabemos;c;kil boy;lili boy
-4189;m;17-18 anos;pitas traem;c;calas;lil bayaby
-1588;m;19-20 anos;nao sabemos ;c;orkut;kachina 
-1288;m;19-20 anos;nao sabemos ;c;lil;kachina 
-1388;m;19-20 anos;nao sabemos ;c;poll;kachina 
+1234;m;idade entre os 20-30;suicidio;c;matimbe jose;matimbe justino
+5618;m;velho com barba branca ;infarto;d;nao tem marcas
+6818;f;jovem entre os 20-30 anos ;tomou varios medicamentos;d;nao temos marcas
+5110;g;de 12-14 anos;se matou por stress de mulheres;c;Hugo Basto;matemba
+2243;m;45 anos;Doenca;c;Antonio;Elia
+4189;m;23 anos;tensao;c;Stress;Abdul Hamad
+1588;m;17 anos;Diabete;c;Felisbesto;Mauro 
+1288;m;3 anos;Afogamento ;c;Ernesto;kachin 
+1388;m;24 anos;Incendio ;c;Augusto ;Felismina 
+6815;f;18 a 20;stress;c;Jose matimbe;Omar davide

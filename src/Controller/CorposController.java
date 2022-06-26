@@ -11,39 +11,37 @@ public class CorposController
     private Gravardados gd;
     private Table td;
     private RemoverDados rd;
-    private EditarDaddos ed;
 
     public CorposController() {
-        v = new Vector(100);
+        v = new Vector();
         l = new Lerdados();
         gd = new Gravardados();
         td = new Table();
         rd = new RemoverDados();
-        ed = new EditarDaddos();
     }
 
     public void recebeConhecido() {
         int codCorpo = geraCod.geraCod();
-        char genero = Validacoes.validarChar("Imforme  o genetro : ",1,1);
-        String nome = Validacoes.ValidarString("Imforme o nome completo do falecido: ", 1000, 4);
-        String  faixaEtaria = Validacoes.ValidarString("Imforme a faixa etaria: ", 100, 3);
-        String  causaMorte = Validacoes.ValidarString("Imforme a causa da morte: ", 100, 3);
-        String nomePante = Validacoes.ValidarString("Imforeme o nome do parante : ", 20, 3);
+        char genero = Validacoes.validarChar("Informe  o genero : ",1,1);
+        String nome = Validacoes.ValidarString("Informe o nome completo do falecido: ", 1000, 4);
+        String  faixaEtaria = Validacoes.ValidarString("Informe a faixa etaria: ", 100, 3);
+        String  causaMorte = Validacoes.ValidarString("Informe a causa da morte: ", 100, 3);
+        String nomePante = Validacoes.ValidarString("Informe o nome do parente : ", 20, 3);
         CorpoConh cc = new CorpoConh(codCorpo, nome, genero, faixaEtaria, causaMorte, nomePante);
         if(v.add(cc)){
             System.out.println("adicionado com sucesso");
         } else {
-            System.out.println("erro no cadrasto");
+            System.out.println("erro no cadastro");
         }
         v.trimToSize();
     }
 
     public void recebeDesconhecido() {
        int codCorpo = geraCod.geraCod();
-       char  genero = Validacoes.validarChar("Imforme  o genetro : ",1,1);
-       String   faixaEtaria = Validacoes.ValidarString("Imforme a faixa etaria: ", 100, 3);
-         String   causaMorte = Validacoes.ValidarString("Imforme a causa da morte: ", 100, 3);
-        String marcasPele = Validacoes.ValidarString(" Imforme as marcas na pele : ", 40, 3);
+       char  genero = Validacoes.validarChar("Informe  o genero : ",1,1);
+       String   faixaEtaria = Validacoes.ValidarString("Informe a faixa etaria: ", 100, 3);
+         String   causaMorte = Validacoes.ValidarString("Informe a causa da morte: ", 100, 3);
+        String marcasPele = Validacoes.ValidarString(" Informe as marcas na pele : ", 40, 3);
         CorpoDes cd  = new CorpoDes(codCorpo, genero, faixaEtaria, causaMorte, marcasPele);
         if(v.add(cd)){
             System.out.println("adicionado com sucesso");
@@ -68,14 +66,7 @@ public class CorposController
         rd.removeCorpoD(v, cd);
     }
 
-    public void editaC(int cod) {
-        ed.editaC(v, cod);
-    }
-
-    public void editaD(int cd){
-        ed.editaD(v, cd);
-    }
-    
+  
     
   
     public void   listaCConhecido() {

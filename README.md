@@ -1,18 +1,27 @@
-## Getting Started
+## Sistema de gestão da Morgue do  Hospital Central de Maputo 
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Seja muito bem vindo ao repositório oficial do SGM-HCM, aplicação criada no âmbito da aplicação dos conhecimentos adquiridos na cadeira de programação orientada à objectos 1.
+## Estudantes 
 
-## Folder Structure
+- Matimbe, José Justino (moderador)
+- Junior, Luis Munaira  
+- Macaneta, Lino Filipe
+- Xavier, Omar Davide     
 
-The workspace contains two folders by default, where:
+## Dependências
+- `JDK 8`
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## instalação
+- Faça o clone do repositório `git clone https://github.com/matimbejose/sistemaMorgue/ `
+- Navegue até `src/view`
+- Compile o executável `javac Excutavel.java`
+- Execute o programa ` java Excutaval.class `
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Versões  
+- Versão  LTS (Correspondente a primeira e segunda entrega) : [2.0](https://drive.google.com/drive/folders/10AYCFD5V6vTPerhkFvj32Nh5tHjkVA-C?usp=sharing)
+- Versão  corrente :) Versão desse repositório 
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Links 
+- `UML :` [SGM-HCMUML](https://lucid.app/lucidchart/12439ef8-b08e-4c80-9f12-adadb969ebc0/edit?invitationId=inv_9927829e-f2ab-45c1-a03c-dfbfc86ec458#)
+- `SLIDE : ` [SGM-HCMSLIDE](https://docs.google.com/presentation/d/1X1GPZETEK9zRAOEgRfurHZwnakvmk-oo/edit?usp=drivesdk&ouid=110599150145463806351&rtpof=true&sd=true)

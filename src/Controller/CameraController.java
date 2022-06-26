@@ -9,7 +9,6 @@ public class CameraController {
     private Lerdados ld;
     private Gravardados gd;
     private RemoverDados rd;
-    private EditarDaddos ed;
 
     public CameraController() { 
         v = new Vector();
@@ -17,12 +16,12 @@ public class CameraController {
         ld = new Lerdados();
         gd = new Gravardados();
         rd = new RemoverDados();
-        ed = new EditarDaddos();
     }
 
     public void  recedados(){
-        int numero = Validacoes.ValidarInt("Imforme o numero da camera :  ", 100, 1);
-        int codCorpo = Validacoes.ValidarInt("Imforme o codigo do corpo que estara na camera de numero "+numero+" : ", 9999, 2);
+        System.out.println("\n<<<<<<<<<<<<<<<<<<<<<<<Cadastro de Corpos na Camara >>>>>>>>>>>>>>>>>>>>>>>>>>");
+        int numero = Validacoes.ValidarInt("Numero da camara: ", 100, 1);
+        int codCorpo = Validacoes.ValidarInt("codigo do corpo: ", 9999, 2);
        Camera ca = new Camera(codCorpo, numero);
        if(v.add(ca)){
          System.out.println("adicionado com sucesso");
@@ -44,13 +43,11 @@ public class CameraController {
         rd.removeCamera(v, numero);
     }
 
-    public void editaCamera(int cd) {
-        ed.editaCamera(v, cd);
-    }
+ 
 
     public void   listaCamera() {
         Camera aux;
-        td.setHeaders("Codigo do corpo","Numero da camera");
+        td.setHeaders("Codigo do corpo","Numero da camara");
         for (int i = 0; i < v.size(); i++) {
             aux = (Camera)v.elementAt(i);
             td.addRow(""+aux.getCodCorpo(),""+aux.getNumero());

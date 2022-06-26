@@ -1,257 +1,211 @@
 package View;
 import Controller.*;
-
 public class Menu {
-
-    public static void mostrarMenu() {
+    public static void boostrapApp() {
+        String userF = "Usuario.txt";
+        String corpoF = "corpo.txt";
+        String corpT = "corpoT.txt";
+        String funcF = "Funcionario.txt";
+        String cF = "camera.txt";
+        String m = "morgue.txt";
+      UsuarioController uc = new UsuarioController();
+      uc.lerFich(userF);
       CorposController g = new CorposController();
-      g.lerDoFicC("corpo.txt");
-
+      g.lerDoFicC(corpoF);
       CorposTransferidoController gt = new CorposTransferidoController();
-      gt.lerDoFicC("corpoT.txt");
-
+      gt.lerDoFicC(corpT);
       FucionarioController gf = new FucionarioController();
-      gf.lerDoFic("Funcionario.txt");
-
+      gf.lerDoFic(funcF);
       CameraController gc = new CameraController();
-      gc.lerDoFic("camera.txt");
-
+      gc.lerDoFic(cF);
       MorgueController gm = new MorgueController();
-      gm.lerDoFic("morgue.txt");
-
-        MostrarOp.mostrarOpP();
-        short esc = Validacoes.validarShort("Imforme uma opcao do menu: ", 7, 1);
+      gm.lerDoFic(m);
+        MostrarOp.mostrarTiposDeUser();
+        short esc = Validacoes.validarShort("Escolha uma das opcoes acima: ", 3, 1);
         int cod;
-
         do {
             switch(esc) {
-                //listar
-                case  1:
-                MostrarOp.mosTrarOp();
-                short esc1 = Validacoes.validarShort("Imforme uma opcao do menu: ", 7, 1);
-                switch(esc1) {
-                    //corpos
-                    case 1:
-                    MostrarOp.mostarTipoCopr();
-                    short esc2 = Validacoes.validarShort("Imforme uma opcao do menu: ", 7, 1);
-
-                    switch(esc2) {
+                case 1:
+                System.out.println("\n============================= Dados de Acesso ===============================");
+                String username = Validacoes.ValidarString("Username: ", 100, 2);
+                int pass = Validacoes.ValidarInt("Senha: ", 99999999, 1000);
+                if(uc.AuteticarDiretora(username, pass)) {
+                    //opcao epenas para diretora geral 
+                    MostrarOp.opcaoDetermindaD();
+                    short escolha  = Validacoes.validarShort(">>>>>", 6, 1);
+                    switch (escolha) {
                         case 1:
-                        g.listaCConhecido();
-                        esc = 5;
-                        break;
+                       MostrarOp.opcaoAministarF();
+                       short escf = Validacoes.validarShort(">>>>>", 3, 1);
+                       //funcionarios
+                       switch (escf) {
+                        case 1:
+                        //lista funcionarios 
+                            gf.listaF();
+                            esc = 3;
+                            break;
+                            case 2:
+                            //cadastra funcionarios
+                            gf.recedados();
+                            gf.gravarTxt(funcF);
+                            break;
+                            case 3:
+                            //remover funcionario
+                            cod = Validacoes.ValidarInt("Codigo do funcionario: ", 9999, 1000);
+                            gf.removFunc(cod);
+                            gf.gravarTxt(funcF);
+                            break;
+                            }
+                            break;
 
-                        case 2:
-                        g.listaCDesconhecido();
-                        esc = 5;
-                        break;
+                            //gestor de obituarios
+                            case  2:
+                            MostrarOp.opcaoGestoresDeObituario();
+                            short escolhagd = Validacoes.validarShort("Escolha uma das opcoes : ", 3, 1);
+                             switch (escolhagd) {
+                                //lista Gestor
+                                case 1:
+                                uc.listGestorG();
+                                esc = 3;
+                                    break;
+                                    //cadastra Gestor
+                                    case 2:
+                                    uc.cadastrarGB();
+                                    uc.GravarFich(userF);
+                                    break;
+                                    //remove gestor
+                                    case 3:
+                                    cod = Validacoes.ValidarInt("Codigo do Gestor a Remover >>>", 9999, 1000);
+                                    uc.RemoveGesor(cod);
+                                    uc.GravarFich(userF);
+                                    break;
+                             }
+                            break;
 
-                        case 3:
-                        gt.listaCorpoT();
-                        esc = 5;
-                        break;
+
+                            case 3:
+                            ///admistrar Morgues Veiculadas 
+                            MostrarOp.opcaoGestoresMorguesV();
+                            short escolhal = Validacoes.validarShort(">>>", 6, 1);
+
+                            switch (escolhal) {
+                                //lista 
+                                case 1:
+                                gm.listaM();
+                                esc = 3;
+                                    break;
+
+                                    //cadastra
+                                    case 2:
+                                    gm.recedados();
+                                    gm.gravarTxt(m);
+                                    break;
+
+                                    //remove
+                                    case 3:
+                                    cod = Validacoes.ValidarInt("Codigo da morgue que deseja remover >>>", 9999, 1000);
+                                    gm.removeM(cod);
+                                    gm.gravarTxt(m);
+                                    break;
+
+                            }
+                            break;
+
+                            case 4:
+                            //meus dados
+                            uc.mostraDados("diretora");
+                            break;
+                        
                     }
-                    break;
-                    //funcionarios
-                    case 2:
-                    gf.listaF();
-                    esc = 5;
-                    break;
-
-                    case 3:
-                    //listar cameras
-                     gc.listaCamera();
-                     esc = 5;
-                    break;
-
-                    case 4:
-                    gm.listaM();
-                    esc = 5;
-                    break;
-
-                    //mostra menu principa;
-                    case 5:
-                    MostrarOp.mostrarOpP();
-                    esc = Validacoes.validarShort("Imforme uma opcao do menu: ", 7, 1);
-                    break;
+                } else {
+                    System.out.println("Nao Conseguimos Encotrar Nenhum Resgisto.Tente Novamente !");
                 }
-            break;
-
-               //cadastrar
+                break;
                 case 2:
-                MostrarOp.mosTrarOp();
-                short esc3 = Validacoes.validarShort("Imforme uma opcao do menu : ", 7, 1);
-                switch(esc3) {
-                    case 1:
-                   MostrarOp.mostarTipoCopr();
-                   short esc4 = Validacoes.validarShort("Imforme uma opcao do menu : ", 3, 1);
-
-                   switch(esc4) {
-                       case 1:
-                       g.recebeConhecido();
-                       g.gravarTxt("corpo.txt");
-                       break;
-
-                       case 2:
-                       g.recebeDesconhecido();
-                       g.gravarTxt("corpo.txt");
-                       break;
-
-                       case 3:
-                       gt.recebeCTransF();
-                       gt.GravarFichC("corpoT.txt");
-                       break;
-                   }
-                    break;
-
-                    case 2:
-                    gf.recedados();
-                    gf.gravarTxt("Funcionario.txt");
-                    break;
-
-                    case 3:
-                    gc.recedados();
-                    gc.GravarFich("camera.txt");
-                    break;
-
-                    case 4:
-                    gm.recedados();
-                    gm.gravarTxt("morgue.txt");
-                    break;
-
-                    //mostar menu principal
-                    case 5:
-                    MostrarOp.mostrarOpP();
-                    esc = Validacoes.validarShort("Imforme uma opcao do menu: ", 7, 1);
-                    break;
-                }
-                break;
-
-                //editar dados
-                case 3:
-                MostrarOp.mosTrarOp();
-                short esc4 = Validacoes.validarShort("imforme uma opcao do menu:  ", 7, 1);
-
-                switch(esc4) {
-                    //corpos
-                    case 1:
-                   MostrarOp.mostarTipoCopr();
-                    short esc5 = Validacoes.validarShort("imforme o tipo de corpo : ", 7, 1);
-                    switch(esc5) {
-                        //conhecidos
+                System.out.println("\n============================= Dados de Acesso ===============================");
+                username = Validacoes.ValidarString("Username: ", 100, 2);
+                pass = Validacoes.ValidarInt("Senha: ", 9999, 1000);
+                if(uc.AuteticarGestor(username, pass)) {
+                    //opcao epenas para diretora geral 
+                    MostrarOp.opcaoFuncionarios();
+                    short escolha  = Validacoes.validarShort(">>>>>", 6, 1);
+                    switch (escolha) {
+                        //lsitar corpos
                         case 1:
-                        cod = Validacoes.ValidarInt("Imforme o codigo do corpo a editar o nome do parente : ", 9999, 1000);
-                        g.editaC(cod);
-                        g.gravarTxt("corpo.txt");
-                        break;
+                        MostrarOp.mostarTipoCopr();
+                        short corp = Validacoes.validarShort(">>>>>", 6, 1);
+                        switch (corp) {
+                            case 1:
+                            g.listaCConhecido();
+                            esc = 3;
+                                break;
+                                case 2:
+                                g.listaCDesconhecido();
+                                esc = 3;
+                                break;
+                                case 3:
+                                gt.listaCorpoT();
+                                esc = 3;
+                                break;
+                        }
+                            break;
+                            //cadastrar corpos
+                            case 2:
+                            MostrarOp.mostarTipoCopr();
+                            corp = Validacoes.validarShort(">>>>>", 6, 1);
+                            switch (corp) {
+                                //conhecido
+                                case 1:
+                                g.recebeConhecido();
+                                g.gravarTxt(corpoF);
+                                    break;
+                                    //dseconhecido
+                                    case 2:
+                                    g.recebeDesconhecido();
+                                    g.gravarTxt(corpoF);
+                                    break;
+                            }
+                            break;
+                            //remover corpos
+                            case 3:
+                            MostrarOp.mostarTipoCopr();
+                            short rm = Validacoes.validarShort(">>>", 6, 1);
+                            switch (rm) {
+                                case 1:
+                                cod = Validacoes.ValidarInt("Codigo do corpo  a remover >>>> ", 9999, 1000);
+                                g.removeCorC(cod);
+                                g.gravarTxt(corpoF);
+                                    break;
+                                    case 2:
+                                cod = Validacoes.ValidarInt("Codigo do corpo  a remover >>>>", 9999, 1000);
+                                g.removeCorD(cod);
+                                g.gravarTxt(corpoF);
+                                    break;
+                            }
+                            break;
+                            //Transferir corpos
+                            case 4:
+                            gt.recebeCTransF();
+                            gt.GravarFichC(corpT);
+                            break;
+                            //listar morgues veiculadas
+                            case 5:
+                            gm.listaM();
+                            esc = 3;
+                            break;
 
-                        //desconhecido
-                        case 2:
-                        cod = Validacoes.ValidarInt("Imforme o codigo do corpo a editar  as marcas na pele : ", 9999, 1000);
-                        g.editaD(cod);
-                        g.gravarTxt("corpo.txt");
-                        break;
-
-                        //transferido
-                        case 3:
-                        cod = Validacoes.ValidarInt("Imforme o codigo do corpo a  editar sua localizacao : ", 9999, 1000);
-                        gt.editaCT(cod);
-                        gt.GravarFichC("corpoT.txt");
-                        break;
+                            case 6:
+                            uc.mostraDados("gestor");
+                            break;
                     }
-                    break;
 
-                    //funcionarios
-                    case 2:
-                    cod = Validacoes.ValidarInt("Imforme o codigo do  funcionario a mudar a funcao : ", 9999, 1000);
-                    gf.editaF(cod);
-                    gf.gravarTxt("Funcionario.txt");
-                    break;
-
-                    //cameras
-                    case 3:
-                    cod = Validacoes.ValidarInt("Imforme o codigo do corpo : ", 9999, 1000);
-                    gc.editaCamera(cod);
-                    gc.GravarFich("camera.txt");
-                    break;
-
-                    //morgues vieculdas
-                    case 4:
-                    cod = Validacoes.ValidarInt("Imforme o codigo da morgue  que deseja alterar o celular : ", 9999, 1000);
-                    gm.edita(cod);
-                    gm.gravarTxt("morgue.txt");
-                    break;
-
-                    case 5:
-                    MostrarOp.mostrarOpP();
-                    esc = Validacoes.validarShort("Imforme uma opcao do menu: ", 7, 1);
-                    break;
-                }
-                break;
-
-                //remover dados
-                case 4:
-                MostrarOp.mosTrarOp();
-                short esc5 = Validacoes.validarShort("Imforme uma opcao do menu:  ", 7, 1);
-                switch(esc5) {
-                    //corpos
-                    case 1:
-                    MostrarOp.mostarTipoCopr();
-                    short esc6 = Validacoes.validarShort("Imforme uma opcao do menu: ", 7, 1);
-
-                switch (esc6) {
-                        //conhecidos
-                        case 1:
-                        cod = Validacoes.ValidarInt("Imforme o codigo do corpo  a remover : ", 9999, 1000);
-                        g.removeCorC(cod);
-                        g.gravarTxt("corpo.txt");
-                        break;
-
-                        //desconhecido
-                        case 2:
-                        cod = Validacoes.ValidarInt("Imforme o codigo do corpo  a remover : ", 9999, 1000);
-                        g.removeCorD(cod);
-                        g.gravarTxt("corpo.txt");
-                        break;
-
-                        //transferidos
-                        case 3:
-                        cod = Validacoes.ValidarInt("Imforme o codigo do corpo  a remover : ", 9999, 1000);
-                        gt.removeT(cod);
-                        gt.GravarFichC("corpoT.txt");
-                        break;
-                    }
-                    break;
-
-                    //funcionarios
-                    case 2:
-                    cod = Validacoes.ValidarInt("Imforme o codigo do funcinario  a remover : ", 9999, 1000);
-                    gf.removFunc(cod);
-                    gf.gravarTxt("Funcionario.txt");
-                    break;
-
-                    //camera
-                    case 3:
-                    int numero = Validacoes.ValidarInt("Imforme o numero da camara que deseja remover: ", 100, 1);
-                    gc.removeCamera(numero);
-                    gc.GravarFich("camera.txt");
-                    break;
-
-                    //morgue
-                    case 4:
-                    cod = Validacoes.ValidarInt("Imforme o codigo da morgue que deseja remover  : ", 9999, 1000);
-                    gm.removeM(cod);
-                    gm.gravarTxt("morgue.txt");
-                    break;
-
-                    case 5:
-                    MostrarOp.mostrarOpP();
-                    esc = Validacoes.validarShort("Imforme uma opcao do menu: ", 7, 1);
-                    break;
+                } else {
+                    System.out.println("Nao Conseguimos Encotrar Nenhum Resgisto.Tente Novamente !");
                 }
                 break;
             }
-        } while(esc != 5);
+      
+        } while(esc != 3);
     }
 
 }

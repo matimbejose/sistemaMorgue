@@ -158,4 +158,46 @@ public class Lerdados {
             System.out.println(l.getMessage());
         }
     }
+    
+    public   void  LerdadosUsers(Vector list,String nameFil) {
+        StringTokenizer umaCadeia;
+        String umaLinha;
+        try {
+        FileReader fr = new FileReader(nameFil);
+        BufferedReader br = new BufferedReader(fr);
+        umaLinha = br.readLine();
+        while(umaLinha != null) {
+            umaCadeia = new  StringTokenizer(umaLinha, ";");
+            int code = Integer.parseInt(umaCadeia.nextToken());
+            String nome = umaCadeia.nextToken();
+            String Username = umaCadeia.nextToken();
+            int password = Integer.parseInt(umaCadeia.nextToken());
+            char criteiro = umaCadeia.nextToken().charAt(0);
+            if (criteiro == 'd' || criteiro == 'D') {
+                int ano = Integer.parseInt(umaCadeia.nextToken());
+                UserD ud = new UserD(code, nome, Username, password,ano);
+                list.addElement(ud);
+                list.trimToSize();
+            } else {
+                int nrOb = Integer.parseInt(umaCadeia.nextToken());
+                UserAb ab = new UserAb(code, nome, Username, password, nrOb);
+                list.addElement(ab);
+                list.trimToSize();
+            }
+            umaLinha = br.readLine();
+        }
+        br.close();
+        } catch (FileNotFoundException l) {
+            System.out.println(l.getMessage());
+        } catch (NumberFormatException l) {
+            System.out.println(l.getMessage());
+        } catch (NoSuchElementException l) {
+            System.out.println(l.getMessage());
+        } catch (IOException l) {
+            System.out.println(l.getMessage());
+        }
+    }
+
+
+    
 }

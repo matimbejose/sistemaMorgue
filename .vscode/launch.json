@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Excutavel",
+            "request": "launch",
+            "mainClass": "View.Excutavel",
+            "projectName": "morgue_9070233d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Excutavel",
+            "request": "launch",
+            "mainClass": "View.Excutavel",
+            "projectName": "morgue_a62a0ca3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Excutavel",
+            "request": "launch",
+            "mainClass": "Excutavel",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Launch Table",
             "request": "launch",
             "mainClass": "View.Table",

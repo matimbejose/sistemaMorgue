@@ -1,5 +1,5 @@
-1342;98287234;rua sao bernado 25 de junho a
-2342;847787068;rua da  sorte 23 de junho a
-2342;847787068;rua sao melao 24 de junho a
-3342;847787068;rua sao bernado 26 de junho a
-9544;847700000;avenida de mocambique 
+1342;878287234;rua sao bernado 25 de junho a
+2342;827787068;rua da  sorte 23 de junho a
+2342;857787068;rua sao melao 24 de junho a
+3342;837787068;rua sao bernado 26 de junho a
+9544;867700000;avenida de mocambique 

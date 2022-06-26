@@ -72,6 +72,8 @@ public class Table {
         singleRow.addAll(Arrays.asList(row));
         this.rows.add(singleRow);
     }
+
+
     
     public void showTable(){
         updateMaxRowSize();
