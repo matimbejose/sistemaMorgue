@@ -1,25 +1,25 @@
-## Sistema de gestão da Morgue do  Hospital Central de Maputo 
+## Management system of the Morgue of the Central Hospital of Maputo
 
-Seja muito bem vindo ao repositório oficial do SGM-HCM, aplicação criada no âmbito da aplicação dos conhecimentos adquiridos na cadeira de programação orientada à objectos 1.
-## Estudantes 
+Welcome to the official repository of the SGM-HCM, an application created within the scope of the application of the knowledge acquired in the object-oriented programming course 1.
+## Students 
 
-- Matimbe, José Justino (moderador)
+- Matimbe, José Justino (moderator)
 - Junior, Luis Munaira  
 - Macaneta, Lino Filipe
 - Xavier, Omar Davide     
 
-## Dependências
+## Dependencies
 - `JDK 8`
 
-## instalação
-- Faça o clone do repositório `git clone https://github.com/matimbejose/sistemaMorgue/ `
-- Navegue até `src/view`
-- Compile o executável `javac Excutavel.java`
-- Execute o programa ` java Excutaval.class `
+## Installation
+- Clone the repository `git clone https://github.com/matimbejose/sistemaMorgue/ `
+- Navigate to `src/view`
+- Compile the executable `javac Excutavel.java`
+- run the program ` java Excutaval.class `
 
-## Versões  
-- Versão  LTS (Correspondente a primeira e segunda entrega) : [2.0](https://drive.google.com/drive/folders/10AYCFD5V6vTPerhkFvj32Nh5tHjkVA-C?usp=sharing)
-- Versão  corrente :) Versão desse repositório 
+## Versions  
+- LTS version (Corresponding to first and second delivery) : [2.0](https://drive.google.com/drive/folders/10AYCFD5V6vTPerhkFvj32Nh5tHjkVA-C?usp=sharing)
+- Current version :) Version of this repository
 
 
 ## Links 
